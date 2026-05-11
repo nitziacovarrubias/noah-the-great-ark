@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Genesis The First Garden"
+config/name="Noah: The Great Ark"
 run/main_scene="uid://cde8kjg7x4thv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://eqpfq2j5o855"
