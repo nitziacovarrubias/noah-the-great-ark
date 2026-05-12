@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dassxpe8xkt0p"]
+
+[ext_resource type="Script" uid="uid://bg65iud6wglco" path="res://scenes/player/player.gd" id="1_gfjak"]
+[ext_resource type="Texture2D" uid="uid://btxsjijeiemfj" path="res://assets/characters/noah/sprites/Farmer_Sheet.png" id="2_4kuee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_524rm"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(288, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpg5x"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(320, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3xxp"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npwbq"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v42im"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn6s4"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oing"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5stf6"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_180ig"]
+atlas = ExtResource("2_4kuee")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20koh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_524rm")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpg5x")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3xxp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npwbq")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v42im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn6s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oing")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5stf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_180ig")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfjak"]
+radius = 4.666667
+height = 13.666666
+
+[node name="Player" type="CharacterBody2D" unique_id=928407295]
+texture_filter = 1
+position = Vector2(0, -7)
+scale = Vector2(3, 3)
+script = ExtResource("1_gfjak")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=522719201]
+sprite_frames = SubResource("SpriteFrames_20koh")
+animation = &"crouch"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=759962066]
+position = Vector2(0, 3.5)
+shape = SubResource("CapsuleShape2D_gfjak")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1187735644]
+zoom = Vector2(3, 3)

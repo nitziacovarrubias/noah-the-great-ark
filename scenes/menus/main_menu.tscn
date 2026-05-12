@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cde8kjg7x4thv"]
 
 [ext_resource type="Script" uid="uid://rawa62wskxyf" path="res://scenes/menus/main_menu.gd" id="1_euy4r"]
-[ext_resource type="Texture2D" uid="uid://ba67g2dbstfo8" path="res://scenes/ui/backgrounds/main_menu_background.png" id="1_xqga4"]
+[ext_resource type="Texture2D" uid="uid://3fcj1gks1fcy" path="res://scenes/ui/backgrounds/main_menu_background.png" id="1_xqga4"]
 [ext_resource type="Texture2D" uid="uid://cqpo7ga3k87fo" path="res://scenes/ui/title/title_scroll.png" id="2_ovrgc"]
 [ext_resource type="Texture2D" uid="uid://cb3s4uwb7dd5o" path="res://scenes/ui/panels/main_menu_panel.png" id="3_2o76q"]
 [ext_resource type="FontFile" uid="uid://n1lt6u6fiall" path="res://assets/fonts/pixel_font.ttf" id="3_6bivr"]
@@ -281,7 +281,7 @@ theme_override_constants/separation = -59
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6bivr")
 theme_override_font_sizes/font_size = 18
-text = "A Journey of Creation"
+text = "A Journey of Faith"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -316,8 +316,8 @@ offset_bottom = 186.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_6bivr")
 theme_override_font_sizes/font_size = 30
-text = "GENESIS: 
-THE FIRST GARDEN"
+text = "NOAH: 
+THE GREAT ARK"
 horizontal_alignment = 1
 vertical_alignment = 3
 
