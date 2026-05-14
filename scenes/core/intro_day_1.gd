@@ -11,7 +11,7 @@ extends Control
 @onready var mission_pad: AudioStreamPlayer = $MissionPad
 
 func _ready() -> void:
-	play_intro_drone()
+	animation_player.animation_finished.connect(_on_animation_player_animation_finished)
 	animation_player.play("play_intro")
 	animation_player.advance(0)
 
@@ -44,5 +44,7 @@ func play_mission_pad() -> void:
 		mission_pad.play()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	print("Animación terminada: ", anim_name)
+ 
 	if anim_name == "play_intro":
-		get_tree().change_scene_to_file("res://scenes/levels/Day1.tscn")
+		get_tree().change_scene_to_file("res://scenes/player/World.tscn")

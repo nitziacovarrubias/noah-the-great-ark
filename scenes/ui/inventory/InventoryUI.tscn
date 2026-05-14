@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://dy52svtm68kr0"]
+
+[ext_resource type="Script" uid="uid://5tip1irxiuf2" path="res://scenes/ui/inventory/inventory_ui.gd" id="1_bxwwy"]
+[ext_resource type="PackedScene" uid="uid://dj1p5fndortds" path="res://scenes/ui/inventory/InventorySlot.tscn" id="2_2or24"]
+[ext_resource type="Texture2D" uid="uid://lqhkft3uy0wv" path="res://assets/ui/inventory/spritesheets/plain_paper_ui_spritesheet.png" id="2_rqne3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2or24"]
+atlas = ExtResource("2_rqne3")
+region = Rect2(26.299713, 724.2163, 665.5001, 584.88367)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqne3"]
+atlas = ExtResource("2_rqne3")
+region = Rect2(841.943, 1253.182, 429.75244, 79.93994)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3udt2"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=2095375908]
+script = ExtResource("1_bxwwy")
+slot_scene = ExtResource("2_2or24")
+
+[node name="Root" type="Control" parent="." unique_id=1438178381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimOverlay" type="ColorRect" parent="Root" unique_id=333052291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="CenterContainer" type="CenterContainer" parent="Root" unique_id=1138565983]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryPanel" type="TextureRect" parent="Root/CenterContainer" unique_id=750017010]
+modulate = Color(0.9367016, 0.9367016, 0.93670154, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(700, 450)
+layout_mode = 2
+texture = SubResource("AtlasTexture_2or24")
+
+[node name="TextureRect" type="TextureRect" parent="Root/CenterContainer/InventoryPanel" unique_id=1043706756]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 9.0
+offset_top = 93.0
+offset_right = 9.0
+offset_bottom = 197.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_rqne3")
+
+[node name="Label" type="Label" parent="Root/CenterContainer/InventoryPanel/TextureRect" unique_id=411734014]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -113.0
+offset_top = 30.0
+offset_right = 107.0
+offset_bottom = 20.8
+grow_horizontal = 2
+theme_override_colors/font_color = Color(8.122064e-08, 0.23377755, 0.002451973, 1)
+theme_override_font_sizes/font_size = 22
+text = "Inventario"
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/CenterContainer/InventoryPanel" unique_id=1570734017]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -38.0
+offset_right = 20.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/CenterContainer/InventoryPanel/MarginContainer" unique_id=150891693]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer" unique_id=20957381]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Header" unique_id=1094709953]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Header" unique_id=1693336434]
+visible = false
+layout_mode = 2
+
+[node name="Content" type="HBoxContainer" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer" unique_id=951887547]
+layout_mode = 2
+
+[node name="InfoPanel" type="VBoxContainer" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Content" unique_id=1495916143]
+layout_mode = 2
+
+[node name="ItemNameLabel" type="Label" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Content/InfoPanel" unique_id=1410634995]
+layout_mode = 2
+
+[node name="ItemDescriptionLabel" type="Label" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Content/InfoPanel" unique_id=990306166]
+layout_mode = 2
+
+[node name="SlotsPanel" type="VBoxContainer" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Content" unique_id=1395994410]
+layout_mode = 2
+
+[node name="SectionTitle" type="Label" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Content/SlotsPanel" unique_id=272359325]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer/Content/SlotsPanel" unique_id=1905660742]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 5
+
+[node name="FooterLabel" type="Label" parent="Root/CenterContainer/InventoryPanel/MarginContainer/VBoxContainer" unique_id=1048256142]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Root/CenterContainer/InventoryPanel" unique_id=59925838]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_3udt2")

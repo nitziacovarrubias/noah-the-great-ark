@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b4xd3dd4x5rtj" path="res://assets/audio/sfx/intro/ring_tail.ogg" id="5_e36q8"]
 [ext_resource type="AudioStream" uid="uid://dvro0nthrl7lv" path="res://assets/audio/sfx/intro/dark_swell.ogg" id="6_biitu"]
 [ext_resource type="AudioStream" uid="uid://d3scibod1n1g8" path="res://assets/audio/sfx/intro/mission_pad.ogg" id="7_8nex2"]
+[ext_resource type="Script" uid="uid://bbh3mi6whk8ib" path="res://scenes/core/animation_player.gd" id="9_lkkmm"]
 
 [sub_resource type="Animation" id="Animation_cpqjx"]
 length = 0.001
@@ -211,6 +212,7 @@ _data = {
 }
 
 [node name="IntroDay1" type="Control" unique_id=2106073653]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -312,3 +314,4 @@ stream = ExtResource("7_8nex2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1578452183]
 libraries/ = SubResource("AnimationLibrary_b2e3h")
+script = ExtResource("9_lkkmm")

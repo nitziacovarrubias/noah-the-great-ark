@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var respawn_particles: GPUParticles2D = $RespawnParticles
 
 const SPEED := 170.0
 const JUMP_VELOCITY := -360.0
@@ -63,3 +64,15 @@ func play_animation(animation_name: String) -> void:
 	else:
 		if animated_sprite.sprite_frames.has_animation("idle"):
 			animated_sprite.play("idle")
+			
+			
+func _on_water_body_entered(body: Node2D) -> void:
+	if body == self:
+		global_position = Vector2(70, -200)
+		velocity = Vector2.ZERO
+		play_respawn_effect()
+
+func play_respawn_effect() -> void:
+	respawn_particles.emitting = false
+	respawn_particles.restart()
+	respawn_particles.emitting = true

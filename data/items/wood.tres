@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://s51e8nudparf"]
+
+[ext_resource type="Script" uid="uid://chs3n7gt0fxcb" path="res://scenes/ui/inventory/inventory_item.gd" id="1_pkq13"]
+
+[resource]
+script = ExtResource("1_pkq13")
+item_name = "Wood"
+description = "Material necesario para construir el arca."
+metadata/_custom_type_script = "uid://chs3n7gt0fxcb"
