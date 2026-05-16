@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://8u02liwicuh3"]
+
+[ext_resource type="Script" uid="uid://clbh364nfut2u" path="res://scripts/items/collectible_item.gd" id="1_18dnv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qn8aq"]
+
+[node name="CollectibleItem" type="Area2D" unique_id=1907036493]
+script = ExtResource("1_18dnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1649337590]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1575938374]
+shape = SubResource("CircleShape2D_qn8aq")

@@ -291,6 +291,15 @@ layout_mode = 2
 text = "Your faith will decide the fate of the world."
 horizontal_alignment = 1
 
+[node name="SkipButton" type="Button" parent="." unique_id=362009433]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 615.0
+offset_right = 759.0
+offset_bottom = 655.0
+size_flags_vertical = 8
+text = "SKIP >>>"
+
 [node name="IntroDrone" type="AudioStreamPlayer" parent="." unique_id=1909806899]
 stream = ExtResource("1_1e4sa")
 

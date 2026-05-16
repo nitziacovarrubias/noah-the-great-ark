@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c56g5y3q28ds2"]
+
+[ext_resource type="Script" uid="uid://c8p83dc2kmd3g" path="res://scripts/ui/mission/mission_tracker_hud.gd" id="1_klxxx"]
+
+[node name="MissionTrackerHUD" type="CanvasLayer" unique_id=1230016146]
+script = ExtResource("1_klxxx")
+
+[node name="Root" type="Control" parent="." unique_id=832215643]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root" unique_id=1730111902]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(16, 16)
+
+[node name="PanelContainer" type="PanelContainer" parent="Root/MarginContainer" unique_id=265594659]
+custom_minimum_size = Vector2(230, 120)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/MarginContainer/PanelContainer" unique_id=2047831394]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/MarginContainer/PanelContainer/MarginContainer" unique_id=2124946200]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Root/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1131348920]
+layout_mode = 2
+text = "Resources"
+horizontal_alignment = 1
+
+[node name="RowsContainer" type="VBoxContainer" parent="Root/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1093809522]
+layout_mode = 2

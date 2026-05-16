@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://wb464y81dgse"]
+
+[ext_resource type="Texture2D" uid="uid://lqhkft3uy0wv" path="res://assets/ui/inventory/spritesheets/plain_paper_ui_spritesheet.png" id="1_musv7"]
+[ext_resource type="Script" uid="uid://c4cnd3ete45u0" path="res://scripts/ui/mission/mission_complete_popup.gd" id="1_mw7ak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw7ak"]
+atlas = ExtResource("1_musv7")
+region = Rect2(59.284225, 2908.537, 775.97406, 569.53564)
+
+[node name="MissionCompletePopup" type="CanvasLayer" unique_id=136109451]
+script = ExtResource("1_mw7ak")
+
+[node name="Root" type="Control" parent="." unique_id=1499814188]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimOverlay" type="ColorRect" parent="Root" unique_id=902458505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="CenterContainer" type="CenterContainer" parent="Root" unique_id=764951420]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -130.0
+offset_right = 312.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Root/CenterContainer" unique_id=1846260930]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/CenterContainer/PanelContainer" unique_id=1505917860]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Root/CenterContainer/PanelContainer/MarginContainer" unique_id=1546925113]
+layout_mode = 2
+texture = SubResource("AtlasTexture_mw7ak")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/CenterContainer/PanelContainer/MarginContainer" unique_id=411975352]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Root/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2128176568]
+layout_mode = 2
+theme_override_colors/font_color = Color(2.3463741e-07, 0.35155073, 1.1070073e-06, 1)
+theme_override_font_sizes/font_size = 17
+text = "Mission Completed"
+horizontal_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="Root/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1192447698]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+text = "The path to the next biome is now open."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton" type="Button" parent="Root/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=603865651]
+layout_mode = 2
+text = "Continue"

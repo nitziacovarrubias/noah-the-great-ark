@@ -10,8 +10,15 @@ extends Control
 @onready var dark_swell: AudioStreamPlayer = $DarkSwell
 @onready var mission_pad: AudioStreamPlayer = $MissionPad
 
+@onready var skip_button: Button = $SkipButton
+
+const WORLD_SCENE := "res://scenes/player/World.tscn"
+
 func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_player_animation_finished)
+
+	skip_button.pressed.connect(_on_skip_pressed)
+
 	animation_player.play("play_intro")
 	animation_player.advance(0)
 
@@ -45,6 +52,20 @@ func play_mission_pad() -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	print("Animación terminada: ", anim_name)
- 
+
 	if anim_name == "play_intro":
-		get_tree().change_scene_to_file("res://scenes/player/World.tscn")
+		go_to_world()
+
+func _on_skip_pressed() -> void:
+	go_to_world()
+
+func go_to_world() -> void:
+	intro_drone.stop()
+	text_whoosh.stop()
+	divine_rise.stop()
+	light_flash_sfx.stop()
+	ring_tail.stop()
+	dark_swell.stop()
+	mission_pad.stop()
+
+	get_tree().change_scene_to_file(WORLD_SCENE)
