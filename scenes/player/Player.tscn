@@ -101,11 +101,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfjak"]
 radius = 4.666667
-height = 13.666666
+height = 10.0
 
 [node name="Player" type="CharacterBody2D" unique_id=928407295]
 texture_filter = 1
-position = Vector2(0, -7)
+position = Vector2(0, -9)
 scale = Vector2(3, 3)
 script = ExtResource("1_gfjak")
 metadata/_edit_group_ = true
@@ -120,3 +120,7 @@ shape = SubResource("CapsuleShape2D_gfjak")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1187735644]
 zoom = Vector2(3, 3)
+
+[node name="ThrowPoint" type="Marker2D" parent="." unique_id=982061629]
+position = Vector2(2.8, 0)
+gizmo_extents = 2.5

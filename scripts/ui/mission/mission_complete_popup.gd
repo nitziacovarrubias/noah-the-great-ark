@@ -21,11 +21,15 @@ func show_completion(biome_id: String) -> void:
 
 	title_label.text = mission_data["title"] + " Completed"
 
-	message_label.text = "All required items have been collected.\n\nThe door at the end of the biome has been opened.\nYou may now continue."
+	if biome_id == "spring":
+		message_label.text = "All required resources have been collected.\n\nThe door at the end of the biome has been opened.\nYou may now continue."
+	elif biome_id == "summer":
+		message_label.text = "All seven pairs of animals have been gathered.\n\nThe door at the end of the biome has been opened.\nYou may now continue."
+	else:
+		message_label.text = "The mission has been completed.\n\nThe path forward is now open."
 
 	root.visible = true
 	get_tree().paused = true
-
 	continue_button.grab_focus()
 
 func close_popup() -> void:

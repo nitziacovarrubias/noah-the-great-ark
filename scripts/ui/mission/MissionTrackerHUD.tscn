@@ -6,6 +6,7 @@
 script = ExtResource("1_klxxx")
 
 [node name="Root" type="Control" parent="." unique_id=832215643]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
@@ -24,6 +25,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Root/MarginContainer/PanelContainer/MarginContainer" unique_id=2124946200]
+z_index = 1
 layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="Root/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1131348920]

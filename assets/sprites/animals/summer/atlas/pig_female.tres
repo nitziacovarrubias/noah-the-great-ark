@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cswio8pa6ymfe"]
+
+[ext_resource type="Texture2D" uid="uid://b0yuhu41vae4n" path="res://assets/sprites/animals/summer/animal_pairs_spritesheet.png" id="1_32s50"]
+
+[resource]
+atlas = ExtResource("1_32s50")
+region = Rect2(2.9086475, 74.49894, 27.107344, 19.391396)

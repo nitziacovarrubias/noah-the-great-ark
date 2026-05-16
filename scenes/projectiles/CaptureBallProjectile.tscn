@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dqi0ao53orjei"]
+
+[ext_resource type="Script" uid="uid://0wlrwiw4nyq2" path="res://scripts/projectiles/capture_ball_projectile.gd" id="1_p54vs"]
+[ext_resource type="Texture2D" uid="uid://b1j4nk5xpcpag" path="res://assets/sprites/items/summer/capture_ball.png" id="1_toxl8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p54vs"]
+atlas = ExtResource("1_toxl8")
+region = Rect2(219.69177, 156.35823, 424.82098, 424.82092)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bnnep"]
+
+[node name="CaptureBallProjectile" type="Area2D" unique_id=369709180]
+script = ExtResource("1_p54vs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1589810623]
+position = Vector2(8.940697e-08, -0.12499684)
+scale = Vector2(0.042452835, 0.04186322)
+texture = SubResource("AtlasTexture_p54vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1748796457]
+shape = SubResource("CircleShape2D_bnnep")

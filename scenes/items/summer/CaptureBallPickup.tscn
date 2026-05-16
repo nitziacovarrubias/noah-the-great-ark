@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cjy8t7nru3vmx"]
+
+[ext_resource type="Texture2D" uid="uid://b1j4nk5xpcpag" path="res://assets/sprites/items/summer/capture_ball.png" id="1_4aa7s"]
+[ext_resource type="Script" uid="uid://bjwkolqb3bwe3" path="res://scripts/items/summer/capture_ball.gd" id="1_5r77s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r77s"]
+atlas = ExtResource("1_4aa7s")
+region = Rect2(223.0502, 161.10469, 420.92343, 418.9748)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5r77s"]
+
+[node name="CaptureBallPickup" type="Area2D" unique_id=1311072929]
+script = ExtResource("1_5r77s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129041062]
+position = Vector2(9.536743e-07, 0)
+scale = Vector2(0.042857144, 0.044258367)
+texture = SubResource("AtlasTexture_5r77s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=24016527]
+shape = SubResource("CircleShape2D_5r77s")
+
+[node name="Label" type="Label" parent="." unique_id=965477138]
+offset_left = -12.0
+offset_top = -15.0
+offset_right = 12.0
+offset_bottom = -12.0
+theme_override_font_sizes/font_size = 3
+text = "Pokeball"

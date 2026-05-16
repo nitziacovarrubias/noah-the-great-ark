@@ -1,5 +1,8 @@
 extends CharacterBody2D
+@export var capture_ball_projectile_scene: PackedScene = preload("res://scenes/projectiles/CaptureBallProjectile.tscn")
 
+@onready var throw_point: Marker2D = $ThrowPoint
+var last_direction := Vector2.RIGHT
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var respawn_particles: GPUParticles2D = $RespawnParticles
 
@@ -36,12 +39,31 @@ func _physics_process(delta: float) -> void:
 	# Voltear personaje
 	if direction != 0:
 		animated_sprite.flip_h = direction < 0
+		
+	if direction > 0:
+		last_direction = Vector2.RIGHT
+	elif direction < 0:
+		last_direction = Vector2.LEFT
 
 	# Animaciones
 	update_animation(direction)
 
 	move_and_slide()
 
+func throw_capture_ball() -> void:
+	if not GameState.has_capture_ball:
+		print("You need the Capture Ball first.")
+		return
+
+	var projectile = capture_ball_projectile_scene.instantiate()
+	get_tree().current_scene.add_child(projectile)
+
+	projectile.global_position = throw_point.global_position
+	projectile.setup(last_direction)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("throw_capture_ball"):
+		throw_capture_ball()
 
 func update_animation(direction: float) -> void:
 	if is_crouching:
@@ -66,11 +88,14 @@ func play_animation(animation_name: String) -> void:
 			animated_sprite.play("idle")
 			
 			
+func respawn_player() -> void:
+	global_position = GameState.get_respawn_position()
+	velocity = Vector2.ZERO
+	play_respawn_effect()			
+
 func _on_water_body_entered(body: Node2D) -> void:
 	if body == self:
-		global_position = Vector2(70, -200)
-		velocity = Vector2.ZERO
-		play_respawn_effect()
+		respawn_player()
 
 func play_respawn_effect() -> void:
 	respawn_particles.emitting = false

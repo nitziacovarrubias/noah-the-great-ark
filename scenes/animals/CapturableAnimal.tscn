@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c582u2n1b7k3b"]
+
+[ext_resource type="Script" uid="uid://chlesp71kfg1t" path="res://scripts/animals/capturable_animal.gd" id="1_gqwch"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ytxu"]
+
+[node name="CapturableAnimal" type="Area2D" unique_id=691319841]
+texture_filter = 1
+script = ExtResource("1_gqwch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1010375107]
+shape = SubResource("CircleShape2D_5ytxu")
+
+[node name="Label" type="Label" parent="." unique_id=1657576129]
+offset_left = -22.0
+offset_top = -17.0
+offset_right = 23.0
+offset_bottom = -11.0
+theme_override_font_sizes/font_size = 3
+text = "Animal"
+horizontal_alignment = 1

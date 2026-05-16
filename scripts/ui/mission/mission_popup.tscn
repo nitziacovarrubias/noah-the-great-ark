@@ -11,6 +11,7 @@ region = Rect2(50.769882, 60.070374, 407.77045, 436.8105)
 script = ExtResource("1_gsq4j")
 
 [node name="Root" type="Control" parent="." unique_id=2031252306]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,18 +34,18 @@ color = Color(0, 0, 0, 0.6)
 
 [node name="TextureRect" type="TextureRect" parent="Root" unique_id=617518571]
 layout_mode = 0
-offset_left = 349.0
-offset_top = 63.0
-offset_right = 858.0
-offset_bottom = 658.0
+offset_left = 308.0
+offset_top = 38.0
+offset_right = 926.0
+offset_bottom = 704.0
 texture = SubResource("AtlasTexture_nxfny")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Root/TextureRect" unique_id=1267055310]
 layout_mode = 0
 offset_left = 102.0
 offset_top = 87.0
-offset_right = 414.0
-offset_bottom = 514.0
+offset_right = 527.0
+offset_bottom = 594.0
 size_flags_horizontal = 4
 theme_override_constants/separation = 30
 
