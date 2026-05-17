@@ -9,7 +9,6 @@ extends StaticBody2D
 var is_open := false
 
 func _ready() -> void:
-	open_door()
 	MissionManager.mission_completed.connect(_on_mission_completed)
 
 	if MissionManager.is_mission_complete(required_biome_id):

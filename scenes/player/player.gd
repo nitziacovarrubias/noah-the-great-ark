@@ -88,14 +88,14 @@ func play_animation(animation_name: String) -> void:
 			animated_sprite.play("idle")
 			
 			
-func respawn_player() -> void:
-	global_position = GameState.get_respawn_position()
-	velocity = Vector2.ZERO
-	play_respawn_effect()			
-
 func _on_water_body_entered(body: Node2D) -> void:
 	if body == self:
 		respawn_player()
+
+func respawn_player() -> void:
+	global_position = GameState.get_respawn_position()
+	velocity = Vector2.ZERO
+	play_respawn_effect()
 
 func play_respawn_effect() -> void:
 	respawn_particles.emitting = false
